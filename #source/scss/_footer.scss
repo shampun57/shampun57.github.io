@@ -1,0 +1,117 @@
+//==========================FOOTER============================================================================================================================================
+
+.footer {
+	background-color: #100F10;
+	width: 100%;
+	@include adaptiv-value("padding-top", 160, 60, 1);
+	@include adaptiv-value("padding-bottom", 60, 60, 1);
+	// .footer__body
+
+	&__body {
+		text-align: center;
+	}
+
+	// .footer__contacts
+
+	&__contacts {}
+
+	// .footer__bd
+
+	&__bd {
+		border-bottom: 1px solid #3D3D3D;
+		@include adaptiv-value("margin-top", 110, 60, 1);
+		@include adaptiv-value("margin-bottom", 110, 60, 1);
+	}
+
+	// .footer__rules
+
+	&__rules {}
+}
+
+.contacts-footer {
+
+	// .contacts-footer__container
+
+	&__container {}
+
+	// .contacts-footer__title
+
+	&__title {
+		margin: 0px 0px calc(13/18* 1em) 0px;
+	}
+
+	// .contacts-footer__phone
+
+	&__phone {
+		margin: 0px 0px calc(100/64* 1em) 0px;
+		font-weight: 400;
+	}
+
+	// .contacts-footer__button
+
+	&__button {}
+}
+
+.rules-footer {
+
+	// .rules-footer__container
+
+	&__container {}
+
+	// .rules-footer__logo
+
+	&__logo {
+		img {
+			max-width: 100%;
+		}
+
+		margin: 0px 0px 40px 0px;
+		display: inline-block;
+	}
+
+	// .rules-footer__navigation
+
+	&__navigation {
+		display: grid;
+
+		@media (min-width: $md5) {
+			grid-auto-flow: column;
+		}
+
+		@media (max-width: $md5) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media (max-width: $md6) {
+			grid-template-columns: 1fr;
+		}
+
+		align-items: center;
+		gap: 50px;
+		margin: 0px 0px 40px 0px;
+		justify-content: center;
+	}
+
+	// .rules-footer__link
+
+	&__link {
+		font-family: 'Poppins';
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 150%;
+		color: #fff;
+
+	}
+}
+
+.footer-rules {
+
+	// .footer-rules__copy
+
+	&__copy {
+		line-height: 138%;
+		color: #6B6B6B;
+		font-size: 18px;
+		font-weight: 400;
+	}
+}

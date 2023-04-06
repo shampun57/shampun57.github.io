@@ -1,0 +1,144 @@
+//=======================HEADER=============================================================================================================================================================================================================================================
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 50;
+	background-color: rgba(15, 15, 15, 0.5);
+	min-height: 80px;
+	// .header__container
+
+	&__container {}
+
+	// .header__body
+
+	&__body {
+		display: grid;
+		grid-auto-flow: column;
+		align-items: center;
+		justify-content: space-between;
+		padding: 18px 0px;
+	}
+
+	// .header__logo
+
+	&__logo {
+		img {
+			@media (max-width: $md6) {
+				width: 160px;
+				height: 100px;
+			}
+		}
+	}
+
+	// .header__menu
+
+	&__menu {}
+
+	// .header__burger
+
+	&__burger {
+		display: flex;
+		align-items: center;
+		height: 20px;
+
+		@media (min-width: $md4) {
+			width: 100px;
+		}
+
+		cursor: pointer;
+
+		span {
+			font-weight: 500;
+			line-height: 100%;
+			font-size: 18px;
+			position: relative;
+
+			&:before,
+			&:after {
+				content: '';
+				background-color: #fff;
+				width: 32px;
+				height: 1px;
+				position: absolute;
+			}
+
+			&:before {
+				content: '';
+				left: -40px;
+				top: 4px;
+				transition: all 0.3s ease 0s;
+			}
+
+			&:after {
+				content: '';
+				left: -40px;
+				bottom: 4px;
+				transition: all 0.3s ease 0s;
+			}
+		}
+	}
+}
+
+.menu-header {
+
+	// .menu-header__list
+
+	&__list {
+		display: grid;
+		grid-auto-flow: column;
+		align-items: center;
+		justify-content: start;
+
+		@media (max-width: $md4) {
+			display: none;
+		}
+
+		li {
+			&:not(:last-child) {
+				margin: 0px 80px 0px 0px;
+			}
+		}
+	}
+
+	// .menu-header__link
+
+	&__link {
+		line-height: 100%;
+		font-size: 18px;
+		font-weight: 500;
+		transition: all 0.8s ease 0s;
+
+		@media(any-hover: hover) {
+			&:hover {
+				border-bottom: 1px solid $orangeColor;
+				transition: all 0.8s ease 0s;
+			}
+		}
+	}
+}
+
+//Бургер меню
+
+.header__burger.active .menu-header__list {
+	display: none;
+}
+
+.header__burger.active {
+	span {
+		&:before {
+			content: '';
+			transform: rotate(45deg);
+			top: 8px;
+			transition: all 0.3s ease 0s;
+		}
+
+		&:after {
+			content: '';
+			transform: rotate(-45deg);
+			bottom: 8px;
+			transition: all 0.3s ease 0s;
+		}
+	}
+}
